@@ -1,0 +1,27 @@
+show databases;
+show tables;
+create database lusu;
+create table lusu.sadhu(
+SI_NO int(10),
+Name varchar(10),
+Roll_No int(10),
+Department varchar(10),
+College_Name varchar(10),
+Place varchar(10)
+);
+select * from lusu.sadhu;
+insert into lusu.sadhu values
+(1,"abinaya",20001,"agri","mce","nammakal"),
+(2,"sadhana",20002,"agri","mce","nammakal"),
+(3,"karthika",20003,"agri","mce","nammakal"),
+(4,"gayathri",20004,"agri","mce","nammakal"),
+(5,"tharani",20005,"agri","mce","nammakal"),
+(6,"gokul",20006,"agri","mce","nammakal"),
+(7,"priya",20007,"agri","mce","nammakal"),
+(8,"harini",20008,"agri","mce","nammakal"),
+(9,"kalai",20009,"agri","mce","nammakal"),
+(10,"jana",20010,"agri","mce","nammakal");
+
+
+
+
