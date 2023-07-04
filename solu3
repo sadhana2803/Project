@@ -1,0 +1,48 @@
+create database sad;
+create table sad.branch(
+branch_id int primary key auto_increment,
+branch_name varchar(10),
+branch_address varchar(10)
+);
+create table sad.employee(
+emo_id int primary key auto_increment,
+ename varchar(50),
+job_desc varchar(50),
+salary int,
+branch_id int);
+select * from sad.branch;
+select * from sad.employee;
+insert into sad.branch values
+(1,"Chennai","BCRoad"),
+(2,"Coimbatore","5thBlock"),
+(3,"Mumbai","XYZRoad"),
+(4,"Hyderabad","10thStreet");
+insert into sad.employee values
+(1,"Ram","Admin",1000000,2),
+(2,"Harini","Manager",2500000,2),
+(3,"George","Sales",2000000,1),
+(4,"Ramya","Sales",1300000,2),
+(5,"Meena","HR",2000000,3),
+(6,"Ashok","Manger",3000000,1),
+(7,"Abdul","HR",2000000,1),
+(8,"Ramya","Engineer",1000000,2),
+(9,"Raghu","CEO",8000000,3),
+(10,"Arvind","Manager",2800000,3),
+(11,"Akshay","Engineer",1000000,1),
+(12,"John","Admin",2200000,1),
+(13,"Abinaya","Engineer",2100000,2),
+(14,"Vidhya","Admin",2200000,Null),
+(15,"Ranjini","Engineer",2100000,Null);
+use sad;
+select employee.emp_id,employee.ename,employee.job_desc,employee.salary,employee.branch_id
+from employee
+inner join branch
+on employee.branch_id=branch.branch_id;
+select employee.emp_id,employee.ename,employee.job_desc,employee.salary,employee.branch_id
+from employee
+right join branch
+on employee.branch_id=branch.branch_id;
+select employee.emp_id,employee.ename,employee.job_desc,employee.salary,employee.branch_id
+from employee
+left join branch
+on employee.branch_id=branch.branch_id;
