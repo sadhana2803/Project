@@ -1,0 +1,50 @@
+create database university;
+create table university.student(
+student_id int primary key,
+student_name varchar(50),
+student_age int,
+student_major varchar(50)
+);
+select * from university.student;
+insert into university.student values
+(1,"abinaya",20,"Bio medical"),
+(2,"gokula priya",20,"B.E.agri"),
+(3,"tharani",21,"Bio technology"),
+(4,"Sadhana",19,"Civil"),
+(5,"Srinivasan",23,"IT"),
+(6,"Selva Kumaran",21,"B.pharm"),
+(7,"Elamparuthi",22,"D.pharm"),
+(8,"Sridhar",24,"B.E.mech"),
+(9,"Srikanth",21,"B.com"),
+(10,"vijayanand",18,"Naturopathy"),
+(11,"Dharshini",19,"MBBS"),
+(12,"Sharmila",19,"Nursing"),
+(13,"Gayathri",19,"B.pharm"),
+(14,"Jagadeesh Babu",25,"B.Ed.maths"),
+(15,"Raga sudha",24,"B.E.physics"),
+(16,"Dhaneeshwari",23,"B.Ed.english");
+update university.student set student_name="vaishnavi"where student_id=15;
+select distinct student_age from university.student;
+delete from university.student where student_id=4;
+alter table university.student add address varchar(50), add home_town varchar(50);
+update university.student set student_name="Mithu" where student_id=6;
+alter table university.student drop address;
+select student_id, student_name, student_age,student_major from university.student
+where student_age>24;
+ select student_id, student_name, student_age,student_major from university.student
+ where student_age<24;
+select student_id, student_name, student_age,student_major from university.student
+ where student_age<24 and student_major="B.pharm";
+ select student_id, student_name, student_age,student_major from university.student
+ where student_major="agri" or student_major="Civil";
+ select student_id, student_name, student_age,student_major from university.student
+ where student_age in (19,21);
+ select student_id, student_name, student_age,student_major from university.student
+ where student_age between 20 and 21;
+ select student_id, student_name, student_age,student_major from university.student
+ where student_age=21 limit 5;
+ select student_id, student_name, student_age,student_major from university.student
+ where student_age=24 limit 1;
+ select student_id, student_name, student_age,student_major from university.student
+ where student_name= "S%";
+
